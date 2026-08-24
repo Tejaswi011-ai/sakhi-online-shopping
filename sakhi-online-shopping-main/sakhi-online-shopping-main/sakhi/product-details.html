@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Sakhi</title>
+    <link rel="stylesheet" href="st.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="logo.jpeg" alt="Sakhi Logo">
+            <div>
+                <h1>Sakhi</h1>
+                <p>Ethnic Elegance</p>
+            </div>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Shop</a></li>
+                <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+                <li><a href="#" onclick="openImageSearchModal()">🔍 Image Search</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="product-details-page" style="padding: 40px 10%;">
+        <div class="product-details-container" style="display: flex; gap: 40px; flex-wrap: wrap;">
+            <!-- Left: 360 Viewer -->
+            <div id="viewer-container" style="flex: 1; min-width: 300px;">
+                <!-- Viewer360 will render here -->
+            </div>
+            
+            <!-- Right: Product Info -->
+            <div class="product-info-sidebar" style="flex: 1; min-width: 300px;">
+                <h1 id="pd-name" style="font-size: 32px; margin-bottom: 10px;"></h1>
+                <p id="pd-price" style="font-size: 24px; color: #b50042; font-weight: bold; margin-bottom: 20px;"></p>
+                
+                <div class="rating" id="pd-rating" style="margin-bottom: 20px;">
+                    <!-- Rating stars will be injected -->
+                </div>
+                
+                <p style="margin-bottom: 20px;">Premium quality, handcrafted with love. Ideal for <span id="pd-occasion"></span> occasions.</p>
+                
+                <div style="margin-bottom: 20px;">
+                    <h4>Select Size</h4>
+                    <div id="pd-sizes" style="display: flex; gap: 10px; margin-top: 10px;">
+                        <!-- Sizes will be injected -->
+                    </div>
+                    <button class="btn-outline" style="margin-top:15px;" onclick="openSizeModal()">📏 Find My Size</button>
+                </div>
+
+                <div style="display: flex; gap: 15px; margin-top: 30px;">
+                    <button id="pd-add-to-cart" class="btn" style="flex: 1; padding: 15px;">Add to Cart</button>
+                    <button id="pd-complete-look" class="btn-outline" style="flex: 1; padding: 15px;">✨ Complete Look</button>
+                </div>
+            </div>
+        </div>
+
+        <hr style="margin: 60px 0; border: none; border-top: 1px solid #e0c1c1;">
+
+        <!-- Recommendations -->
+        <section class="recommendations-section">
+            <h2>❤️ Recommended For You</h2>
+            <div class="product-grid" id="recommended-for-you-container" style="margin-top: 20px;">
+                <!-- Recommended items will be injected -->
+            </div>
+        </section>
+
+        <section class="trending-section" style="margin-top: 60px;">
+            <h2>🔥 Trending Now</h2>
+            <p>Trending based on recent activity</p>
+            <div class="product-grid" id="trending-now-container" style="margin-top: 20px;">
+                <!-- Trending items will be injected -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Find My Size Modal -->
+    <div id="size-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeSizeModal()">&times;</span>
+            <h2>📏 Find My Size</h2>
+            <form onsubmit="calculateSize(event)" style="margin-top: 20px; text-align: left;">
+                <label>Height (cm):</label>
+                <input type="number" id="size-height" required style="width: 100%; padding: 8px; margin-bottom: 10px;">
+                <label>Weight (kg):</label>
+                <input type="number" id="size-weight" required style="width: 100%; padding: 8px; margin-bottom: 10px;">
+                <label>Preferred Fit:</label>
+                <select style="width: 100%; padding: 8px; margin-bottom: 20px;">
+                    <option>Regular</option>
+                    <option>Slim</option>
+                    <option>Loose</option>
+                </select>
+                <button type="submit" class="btn" style="width: 100%;">Calculate Size</button>
+            </form>
+            <div id="size-result" style="display: none; margin-top: 20px; background: #fff0f6; padding: 15px; border-radius: 8px;"></div>
+        </div>
+    </div>
+
+    <!-- Complete Look Modal -->
+    <div id="complete-look-modal" class="modal">
+        <div class="modal-content" style="width: 500px;">
+            <span class="close-btn" onclick="closeCompleteLookModal()">&times;</span>
+            <h2>✨ Complete Your Look</h2>
+            <p id="main-product-name"></p>
+            <div id="matching-items" style="margin-top:20px;"></div>
+            <hr style="margin: 20px 0;">
+            <h3 id="bundle-total"></h3>
+            <button class="btn" style="width:100%; margin-top:10px;" onclick="addBundleToCart()">Add Complete Look to Cart</button>
+        </div>
+    </div>
+
+    <!-- Image Search Modal -->
+    <div id="image-search-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeImageSearchModal()">&times;</span>
+            <h2>🔍 Search by Image</h2>
+            <p>Upload a screenshot or photo to find similar styles!</p>
+            <input type="file" id="image-upload" accept="image/*" onchange="handleImageUpload(event)">
+            <div id="image-search-results" style="display:none; margin-top:20px;">
+                <h3>Scanning...</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Fashion Assistant -->
+    <button id="ai-chat-btn" onclick="toggleChat()">✨ AI Style Assistant</button>
+    <div id="ai-chat-window" class="chat-window" style="display:none;">
+        <div class="chat-header">
+            <h3>🤖 AI Fashion Assistant</h3>
+            <span onclick="toggleChat()" style="cursor:pointer;">&times;</span>
+        </div>
+        <div class="chat-body" id="chat-body">
+            <div class="bot-msg">Hi! Tell me what you're looking for. (e.g. "I need a wedding dress under ₹3000")</div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="chat-input" placeholder="Ask me..." onkeypress="handleChatKeyPress(event)">
+            <button onclick="sendChatMessage()">Send</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2025 Sakhi. All rights reserved.</p>
+    </footer>
+
+    <!-- Load Modular JS -->
+    <script src="js/products.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/recommendations.js"></script>
+    <script src="js/ai-assistant.js"></script>
+    <script src="js/viewer360.js"></script>
+    <script src="js/sakhi.js"></script>
+
+    <script>
+        // Logic specific to Product Details page
+        document.addEventListener("DOMContentLoaded", () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            let productId = urlParams.get('id');
+            
+            // Fallback to first product if no ID
+            if (!productId) productId = 1;
+            
+            const product = getProductById(productId);
+            if (!product) {
+                document.querySelector('.product-details-container').innerHTML = "<h2>Product not found.</h2>";
+                return;
+            }
+
+            // Track viewed product
+            if (typeof trackViewedProduct === 'function') {
+                trackViewedProduct(product.id);
+            }
+
+            // Populate Info
+            document.getElementById('pd-name').innerText = product.name;
+            document.getElementById('pd-price').innerText = `₹${product.price}`;
+            document.getElementById('pd-occasion').innerText = product.occasion || 'all';
+            
+            // Populate Sizes
+            const sizesContainer = document.getElementById('pd-sizes');
+            if (product.sizes) {
+                sizesContainer.innerHTML = product.sizes.map(s => `<button class="btn-outline" style="border-radius: 5px; padding: 5px 15px;">${s}</button>`).join('');
+            }
+            
+            // Populate Rating
+            let ratingHtml = '';
+            for(let i=0; i<Math.floor(product.rating || 5); i++) {
+                ratingHtml += '<i class="fas fa-star" style="color: #f4b400;"></i> ';
+            }
+            ratingHtml += ` <span>(${product.reviews || 0} Reviews)</span>`;
+            document.getElementById('pd-rating').innerHTML = ratingHtml;
+
+            // Setup Buttons
+            document.getElementById('pd-add-to-cart').onclick = () => addToCart(product.name, product.price, product.img);
+            document.getElementById('pd-complete-look').onclick = () => completeLook(product.id);
+
+            // Initialize 360 Viewer
+            new Viewer360('viewer-container', product);
+            
+            // Re-render recommendations based on new view
+            renderRecommended('recommended-for-you-container');
+        });
+    </script>
+</body>
+</html>

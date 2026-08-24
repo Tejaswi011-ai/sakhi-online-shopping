@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Arrivals | Sakhi</title>
+    <link rel="stylesheet" href="st.css">
+</head>
+<body>
+    <header class="header">
+  <div class="logo">
+    <img src="logo.jpeg" alt="Sakhi Logo">
+    <div>
+      <h1>Sakhi</h1>
+      <p>Ethnic Elegance</p>
+    </div>
+  </div>
+
+  <nav class="navbar">
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Shop</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+      <li><a href="wishlist.html">Wishlist</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>New Arrivals</h1>
+        <p>Explore the latest additions to our collection.</p>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="n.jpg" alt="New Season Cotton Kurti">
+                <h3>New Season Cotton Kurti</h3>
+                <p>₹1,999</p>
+                <div style="display:flex; gap:10px; margin-top:10px;">
+                    <button onclick="window.location.href='product-details.html?id=2'" class="btn-outline" style="flex:1;">View Product</button>
+                    <button onclick="addToCart('New Season Cotton Kurti', 1999, 'n.jpg')" class="btn" style="flex:1;">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="j3.jpg" alt="Gold Plated Earrings">
+                <h3>Gold Plated Earrings</h3>
+                <p>₹499</p>
+                <div style="display:flex; gap:10px; margin-top:10px;">
+                    <button onclick="window.location.href='product-details.html?id=5'" class="btn-outline" style="flex:1;">View Product</button>
+                    <button onclick="addToCart('Gold Plated Earrings', 499, 'j3.jpg')" class="btn" style="flex:1;">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="j5.jpg" alt="Kundun Necklace">
+                <h3>Kundun Necklace</h3>
+                <p>₹799</p>
+                <div style="display:flex; gap:10px; margin-top:10px;">
+                    <button onclick="window.location.href='product-details.html?id=6'" class="btn-outline" style="flex:1;">View Product</button>
+                    <button onclick="addToCart('Kundun Necklace', 799, 'j5.jpg')" class="btn" style="flex:1;">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>© 2025 Sakhi. All rights reserved.</p>
+    </footer>
+    <script src="js/products.js"></script><script src="js/auth.js"></script><script src="js/recommendations.js"></script><script src="js/ai-assistant.js"></script><script src="js/viewer360.js"></script><script src="js/sakhi.js"></script>
+
+
+</body>
+</html>

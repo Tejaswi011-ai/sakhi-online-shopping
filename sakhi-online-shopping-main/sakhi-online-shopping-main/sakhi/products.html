@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shop Products - Sakhi</title>
+  <link rel="stylesheet" href="st.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">
+    <img src="logo.jpeg" alt="Sakhi Logo">
+    <div>
+      <h1>Sakhi</h1>
+      <p>Ethnic Elegance</p>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="new-arrivals.html">New Arrivals</a></li>
+      <li><a href="sarees.html">Sarees</a></li>
+      <li><a href="kurtis.html">Kurtis</a></li>
+      <li><a href="lehengas.html">Lehengas</a></li>
+      <li><a href="accessories.html">Accessories</a></li>
+      <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+      <li><a href="wishlist.html">Wishlist</a></li>
+    </ul>
+    <input type="text" id="searchInput" placeholder="Search products...">
+  </nav>
+</header>
+
+<section class="featured-products">
+  <h2>Shop All Products</h2>
+  <div class="product-grid" id="product-list">
+    <!-- Products will be inserted here -->
+    
+    <!-- Example Products -->
+    <div class="product-card">
+      <img src="ss.webp" alt="Silk Saree">
+      <h3>Pure Silk Saree</h3>
+      <p>₹3,499</p>
+      <button onclick="addToCart('Pure Silk Saree', 3499)" class="btn">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="ku.webp" alt="Designer Kurti">
+      <h3>Designer Kurti</h3>
+      <p>₹1,299</p>
+      <button onclick="addToCart('Designer Kurti', 1299)" class="btn">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="bl2.webp" alt="Bridal Lehenga">
+      <h3>Bridal Lehenga</h3>
+      <p>₹7,999</p>
+      <button onclick="addToCart('Bridal Lehenga', 7999)" class="btn">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="tj3.webp" alt="Traditional Jewelry">
+           
+
+      <h3>Traditional Jewelry Set</h3>
+      <p>₹1,599</p>
+      <button onclick="addToCart('Traditional Jewelry', 1599)" class="btn">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="as.webp" alt="Ethnic Accessories">
+      <h3>Ethnic Accessories</h3>
+      <p>₹499</p>
+      <button onclick="addToCart('Ethnic Accessories', 499)" class="btn">Add to Cart</button>
+    </div>
+
+     <div class="product-card">
+      <img src="bss.webp" alt="Banarasi Silk Saree">
+
+      <h3>Banarasi Silk Saree</h3>
+      <p>₹499</p>
+      <button onclick="addToCart('Banarasi Silk Saree', 3499)" class="btn">Add to Cart</button>
+    </div>
+
+
+
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© 2025 Sakhi Ethnic Wear. All Rights Reserved.</p>
+</footer>
+
+<script src="js/products.js"></script><script src="js/auth.js"></script><script src="js/recommendations.js"></script><script src="js/ai-assistant.js"></script><script src="js/viewer360.js"></script><script src="js/sakhi.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakhi - Premium Ethnic Wear</title>
+    <link rel="stylesheet" href="st.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="announcement-bar">
+        <p>✨ Free Shipping on All Orders | Use Code: SAKHI15 for 15% Off</p>
+    </div>
+
+    <header class="header">
+        <div class="logo">
+              <img src="logo.jpeg" alt="Sakhi Logo">
+      <div>
+            <h1>Sakhi</h1>
+            <p>Ethnic Elegance</p>
+         </div>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><img src="new.webp" alt=""><a href="new-arrivals.html">New Arrivals</a></li>
+                <li><img src="sl.webp" alt=""><a href="sarees.html">Sarees</a></li>
+                <li><img src="kl.jpg" alt=""><a href="kurtis.html">kurtis</a></li>
+                <li><img src="ll.jpg" alt=""><a href="lehengas.html">Lehengas</a></li>
+                <li><img src="al.jpg" alt=""><a href="accessories.html">Accessories</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Shop</a></li>
+                <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+                <li><a href="#" onclick="openImageSearchModal()">🔍 Image Search</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+             
+        </nav>
+           </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Festive Collection 2025</h2>
+            <p>Handcrafted with love, designed for elegance</p>
+             <a href="products.html" class="btn">Shop Now</a>
+        </div>
+    </section>
+
+    <section class="categories">
+        <h2>Shop Our Collections</h2>
+        <div class="category-grid">
+            <div class="category-item">
+                <img src="silk.webp" alt="Silk Sarees">
+                <div class="category-overlay">
+                    <h3>Silk Sarees</h3>
+                    <a href="silk-saree.html" class="btn-outline">Shop Now</a>
+                </div>
+            </div>
+            <div class="category-item">
+                <img src="des.jpg" alt="Designer Kurtis">
+                <div class="category-overlay">
+                    <h3>Designer Kurtis</h3>
+                    <a href="designer-kurtis.html" class="btn-outline">Shop Now</a>
+                </div>
+            </div>
+            <div class="category-item">
+                <img src="bridal.webp" alt="Bridal Lehengas">
+                <div class="category-overlay">
+                    <h3>Bridal Lehengas</h3>
+                    <a href="bridal-designs.html" class="btn-outline">Shop Now</a>
+                </div>
+            </div>
+            <div class="category-item">
+                <img src="tra.jpg" alt="Traditional Jewelry">
+                <div class="category-overlay">
+                    <h3>Traditional Jewelry</h3>
+                    <a href="traditional-jewellery.html" class="btn-outline">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-products">
+        <div class="section-header">
+            <h2>Our Best Sellers</h2>
+            <a href="#" class="view-all">View All</a>
+        </div>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-badge">Best Seller</div>
+                <img src="bana.webp" alt="Banarasi Silk Saree">
+                <div class="product-details">
+                    <h3>Banarasi Silk Saree</h3>
+                    <div class="price-container">
+                         <a href="product-details.html?id=1" class="btn-outline"> View Product</a>
+                        <p class="price">₹3,499 <span class="old-price">₹4,999</span></p>
+                        <span class="discount">30% OFF</span>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(128)</span>
+                    </div>
+                    <button class="btn-outline" style="width: 100%; margin-top: 10px;" onclick="completeLook(1)">✨ Complete Your Look</button>
+                </div>
+            </div>
+            <!-- More product cards... -->
+        </div>
+    </section>
+
+    <section class="brand-story">
+        <div class="story-content">
+            <h2>Our Story</h2>
+            <p>Sakhi was born from a passion to celebrate India's rich textile heritage...</p>
+            <a href="about-sakhi.html" class="btn">Know More</a>
+        </div>
+        <div class="story-image">
+            <img src="ar.jpg" alt="Artisan at work">
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="newsletter-container">
+            <h2>Join Our Community</h2>
+            <p>Subscribe to get exclusive offers, early access to new collections...</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit" class="btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+         <p>© 2025 Sakhi. All rights reserved.</p>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">Sale</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">Size Guide</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>About Sakhi</h3>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Artisans</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> hello@sakhi.com</p>
+                    <p><i class="fas fa-phone"></i> +91 9876543210</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Sakhi Ethnic Wear. All Rights Reserved.</p>
+            <div class="payment-methods">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-paypal"></i>
+                <i class="fab fa-cc-amazon-pay"></i>
+            </div>
+        </div>
+    </footer>
+    <!-- Image Search Modal -->
+    <div id="image-search-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeImageSearchModal()">&times;</span>
+            <h2>🔍 Search by Image</h2>
+            <p>Upload a screenshot or photo to find similar styles!</p>
+            <input type="file" id="image-upload" accept="image/*" onchange="handleImageUpload(event)">
+            <div id="image-search-results" style="display:none; margin-top:20px;">
+                <h3>Scanning...</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Complete Look Modal -->
+    <div id="complete-look-modal" class="modal">
+        <div class="modal-content" style="width: 500px;">
+            <span class="close-btn" onclick="closeCompleteLookModal()">&times;</span>
+            <h2>✨ Complete Your Look</h2>
+            <p id="main-product-name"></p>
+            <div id="matching-items" style="margin-top:20px;"></div>
+            <hr style="margin: 20px 0;">
+            <h3 id="bundle-total"></h3>
+            <button class="btn" style="width:100%; margin-top:10px;" onclick="addBundleToCart()">Add Complete Look to Cart</button>
+        </div>
+    </div>
+
+    <!-- AI Fashion Assistant -->
+    <button id="ai-chat-btn" onclick="toggleChat()">✨ AI Style Assistant</button>
+    <div id="ai-chat-window" class="chat-window" style="display:none;">
+        <div class="chat-header">
+            <h3>🤖 AI Fashion Assistant</h3>
+            <span onclick="toggleChat()" style="cursor:pointer;">&times;</span>
+        </div>
+        <div class="chat-body" id="chat-body">
+            <div class="bot-msg">Hi! Tell me what you're looking for. (e.g. "I need a wedding dress under ₹3000")</div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="chat-input" placeholder="Ask me..." onkeypress="handleChatKeyPress(event)">
+            <button onclick="sendChatMessage()">Send</button>
+        </div>
+    </div>
+
+    <script src="js/products.js"></script><script src="js/auth.js"></script><script src="js/recommendations.js"></script><script src="js/ai-assistant.js"></script><script src="js/viewer360.js"></script><script src="js/sakhi.js"></script>
+</body>
+</html>
